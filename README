@@ -1,0 +1,32 @@
+Jan 29, 2010. 
+Author: Srinivas Muddana. email - srinivas.muddana@gmail.com
+Sponsored by Zepho Inc. http://iphone.zepho.com
+
+ABOUT:
+Builds URL's for itune applications and companies according to the set of rules mentioned by apple.
+http://developer.apple.com/iphone/library/qa/qa2008/qa1633.html
+The Application does the following actions on the input:
+* Remove all whitespace
+* Convert all characters to lower-case
+* Remove all copyright (©), trademark (™) and registered mark (®) symbols
+* Replace ampersands ("&") with "and"
+* Remove any of these punctuations !¡"#$%'()*+,\-./:;<=>¿?@[\]^_`{|}~
+* Replace accented and other "decorated" characters (ü, å, etc.) with their elemental character (u, a, etc.)
+* Leave all other characters as-is.
+
+INSTRUCTIONS TO RUN:
+1. Need Ruby 1.8.7
+   Please check ruby http://www.ruby-lang.org/en/downloads/
+2. Need RubyGems
+   http://docs.rubygems.org/
+
+3. Need Sinatra(0.9.4) gem install
+   sudo gem install unicode
+
+4. Need unicode(0.1) gem installed 
+   sudo gem install unicode
+
+Run the app:
+ruby main.rb
+
+Enjoy the application at http://localhost:4567/ (sinatra default port)

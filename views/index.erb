@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.1.0/prototype.js"> </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title> App Store Link Creator </title>
+  <head>
+  <body>
+<center>
+<form action="/create_app_link" method="post">
+<h4> Please fill the form to generate links: </h4>
+<div>
+  <input type="radio" name="app_or_comp" id="application" value="application" checked> Application Name
+  <input type="radio" name="app_or_comp" id="company" value="company"> Company Name
+  <input type="radio" name="app_or_comp" id="both" value="both"> Application by Company
+<table>
+ <tr><td>Application Name</td><td><input id="application_name" value="<%= h(params[:application_name])%>" type="text" name="application_name"/></td></tr>
+  <tr><td>Company Name</td><td><input id="company_name" value="<%= h(params[:company_name]) %>" type="text" name="company_name" /> </td></tr>
+</table>
+<input type="submit" value="submit" />
+</form>
+<% if @link %> 
+<div>
+  <%= @link_label %> : <a href='<%= @link %>'><%= @link %></a>
+<div>
+<% end %>
+</center>
+  <body>
+<script>
+ $('<%=params[:app_or_comp]%>').checked = 'true';
+</script>
+</html>
